@@ -13,27 +13,28 @@ function onSubmit(event) {
     event.preventDefault()
     const { email, password } = event.currentTarget.elements
     
+    const obj = {
+        email: email.value,
+        password: password.value
+    }
+    
 
- 
     if (email.value === "" || password.value === "") {
         alert("Bсі поля повинні бути заповнені")
     } else {
         alert("Ваша форма прийнята")
-console.log()
+     console.log(obj)
     }
 
 
     const formData = new FormData(event.currentTarget)
-   
-
-    formData.forEach((value, key) => {
-        console.log(`${key}: ${value}`)
-        })
-        
-        
     
 
+    event.currentTarget.reset();
 }
+
+
+
 
 
 
